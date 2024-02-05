@@ -105,7 +105,7 @@ const Email: any = ({ videoCounter, backgroundImage, vertical }: any) => {
                   }
                 >
                   <div>
-                    <img src={playIconUrl} />
+                    {/* <img src={playIconUrl} /> */}
 
                     <Img
                       src="https://broadsay-dev-play.s3.amazonaws.com/64789d7a64436238e65ed52e/media/65a7b2da0de55b57e1a07c17/poster.png"
