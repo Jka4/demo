@@ -16,6 +16,8 @@ import {
 import React, { FC, useState } from 'react';
 import styled from 'styled-components/macro';
 
+// import PlayIcon from './playIcon.svg';
+
 const Email: any = ({ videoCounter, backgroundImage, vertical }: any) => {
   const arr = Array.from(Array(videoCounter).keys());
 
@@ -27,6 +29,10 @@ const Email: any = ({ videoCounter, backgroundImage, vertical }: any) => {
 
   const oneVideoPreviewWidth = vertical ? 300 : 500;
   const oneVideoPreviewHeight = vertical ? 500 : 250;
+
+  const playIconUrl = `${process.env.PUBLIC_URL}/images/playIcon.svg`;
+
+  console.log('🚀 ~ playIconUrl:', playIconUrl);
 
   return (
     <Html
@@ -91,19 +97,25 @@ const Email: any = ({ videoCounter, backgroundImage, vertical }: any) => {
               <Column style={{ padding: 50, margin: 20 }}>
                 <Link
                   href="https://example.com"
-                  style={{
-                    // objectFit: 'cover',
-                    backgroundImage: `url('./platIcon.svg')`,
-                  }}
+                  style={
+                    {
+                      // objectFit: 'cover',
+                      // backgroundImage: `url(${PlayIcon})`,
+                    }
+                  }
                 >
-                  <Img
-                    src="https://broadsay-dev-play.s3.amazonaws.com/64789d7a64436238e65ed52e/media/65a7b2da0de55b57e1a07c17/poster.png"
-                    width={oneVideoPreviewWidth}
-                    height={oneVideoPreviewHeight}
-                    style={{
-                      objectFit: 'cover',
-                    }}
-                  />
+                  <div>
+                    <img src={playIconUrl} />
+
+                    <Img
+                      src="https://broadsay-dev-play.s3.amazonaws.com/64789d7a64436238e65ed52e/media/65a7b2da0de55b57e1a07c17/poster.png"
+                      width={oneVideoPreviewWidth}
+                      height={oneVideoPreviewHeight}
+                      style={{
+                        objectFit: 'cover',
+                      }}
+                    />
+                  </div>
                 </Link>
               </Column>
             </>
