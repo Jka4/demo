@@ -11,6 +11,7 @@ import {
   Column,
   Text,
   render,
+  Body,
 } from '@react-email/components';
 import React, { FC, useState } from 'react';
 import styled from 'styled-components/macro';
@@ -51,85 +52,58 @@ const Email: any = ({ videoCounter, backgroundImage, vertical }: any) => {
         />
       </Head>
 
-      <Heading
-        as="h2"
-        style={{
-          fontSize: 32,
-          fontWeight: 'bold',
-          marginTop: 0,
-        }}
-      >
-        Lorem ipsum
-      </Heading>
+      <Body>
+        <Heading
+          as="h2"
+          style={{
+            fontSize: 32,
+            fontWeight: 'bold',
+            marginTop: 0,
+          }}
+        >
+          Lorem ipsum
+        </Heading>
 
-      <Text
-        style={{
-          fontSize: 18,
-        }}
-      >
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, doloribus ipsam reprehenderit voluptatibus
-        ducimus, earum dolor, repudiandae sequi non magni corporis similique ab. Doloribus incidunt numquam atque esse
-        laborum. Architecto adipisci sit quibusdam
-      </Text>
+        <Text
+          style={{
+            fontSize: 18,
+          }}
+        >
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, doloribus ipsam reprehenderit voluptatibus
+          ducimus, earum dolor, repudiandae sequi non magni corporis similique ab. Doloribus incidunt numquam atque esse
+          laborum. Architecto adipisci sit quibusdam
+        </Text>
 
-      <Container
-        style={{
-          backgroundImage: backgroundImage
-            ? `url("https://img.freepik.com/free-photo/abstract-uv-ultraviolet-light-composition_23-2149243965.jpg")`
-            : '',
-          backgroundColor: 'red',
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'center',
-          alignItems: 'center',
-          gap: 20,
-        }}
-      >
-        {arr.length === 1 ? (
-          <>
-            <Column style={{ padding: 50, margin: 20 }}>
-              <Link href="https://example.com">
-                <Img
-                  src="https://broadsay-dev-play.s3.amazonaws.com/64789d7a64436238e65ed52e/media/65a7b2da0de55b57e1a07c17/poster.png"
-                  width={oneVideoPreviewWidth}
-                  height={oneVideoPreviewHeight}
-                  style={{
-                    objectFit: 'cover',
-                  }}
-                />
-              </Link>
-            </Column>
-          </>
-        ) : (
-          <>
-            <Row
-              style={{
-                height: 220,
-                display: 'flex',
-                flexWrap: 'wrap',
-                justifyContent: 'center',
-                alignItems: 'center',
-                gap: 20,
-              }}
-            >
-              {arr1?.map(() => {
-                return (
-                  <Column style={{ padding: 5, margin: 5 }}>
-                    <Link href="https://example.com">
-                      <Img
-                        src="https://broadsay-dev-play.s3.amazonaws.com/64789d7a64436238e65ed52e/media/65a7b2da0de55b57e1a07c17/poster.png"
-                        width={previewWidth}
-                        height={previewHeight}
-                        style={{
-                          objectFit: 'cover',
-                        }}
-                      />
-                    </Link>
-                  </Column>
-                );
-              })}
-            </Row>
-            {arr2.length ? (
+        <Container
+          style={{
+            backgroundImage: backgroundImage
+              ? `url("https://img.freepik.com/free-photo/abstract-uv-ultraviolet-light-composition_23-2149243965.jpg")`
+              : '',
+            backgroundColor: 'red',
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: 20,
+          }}
+        >
+          {arr.length === 1 ? (
+            <>
+              <Column style={{ padding: 50, margin: 20 }}>
+                <Link href="https://example.com">
+                  <Img
+                    src="https://broadsay-dev-play.s3.amazonaws.com/64789d7a64436238e65ed52e/media/65a7b2da0de55b57e1a07c17/poster.png"
+                    width={oneVideoPreviewWidth}
+                    height={oneVideoPreviewHeight}
+                    style={{
+                      objectFit: 'cover',
+                    }}
+                  />
+                </Link>
+              </Column>
+            </>
+          ) : (
+            <>
               <Row
                 style={{
                   height: 220,
@@ -140,7 +114,7 @@ const Email: any = ({ videoCounter, backgroundImage, vertical }: any) => {
                   gap: 20,
                 }}
               >
-                {arr2?.map(() => {
+                {arr1?.map(() => {
                   return (
                     <Column style={{ padding: 5, margin: 5 }}>
                       <Link href="https://example.com">
@@ -157,10 +131,39 @@ const Email: any = ({ videoCounter, backgroundImage, vertical }: any) => {
                   );
                 })}
               </Row>
-            ) : null}
-          </>
-        )}
-      </Container>
+              {arr2.length ? (
+                <Row
+                  style={{
+                    height: 220,
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    gap: 20,
+                  }}
+                >
+                  {arr2?.map(() => {
+                    return (
+                      <Column style={{ padding: 5, margin: 5 }}>
+                        <Link href="https://example.com">
+                          <Img
+                            src="https://broadsay-dev-play.s3.amazonaws.com/64789d7a64436238e65ed52e/media/65a7b2da0de55b57e1a07c17/poster.png"
+                            width={previewWidth}
+                            height={previewHeight}
+                            style={{
+                              objectFit: 'cover',
+                            }}
+                          />
+                        </Link>
+                      </Column>
+                    );
+                  })}
+                </Row>
+              ) : null}
+            </>
+          )}
+        </Container>
+      </Body>
     </Html>
   );
 };
