@@ -24,15 +24,15 @@ const Email: any = ({ videoCounter, backgroundImage, vertical }: any) => {
   const arr1 = [...arr].slice(0, 3);
   const arr2 = [...arr].slice(3, 6);
 
-  const previewWidth = vertical ? 130 : 180;
-  const previewHeight = vertical ? 180 : 130;
+  const previewWidth = vertical ? 130 : 170;
+  const previewHeight = vertical ? 180 : 120;
 
   const oneVideoPreviewWidth = vertical ? 300 : 500;
   const oneVideoPreviewHeight = vertical ? 500 : 250;
 
-  const playIconUrl = `https://raw.githubusercontent.com/Jka4/demo/master/public/images/playIcon.svg`;
+  const blockHeight = !vertical ? 170 : 220;
 
-  console.log('🚀 ~ playIconUrl:', playIconUrl);
+  const playIconUrl = `https://raw.githubusercontent.com/Jka4/demo/gh-pages/images/playIcon.svg`;
 
   return (
     <Html
@@ -102,7 +102,7 @@ const Email: any = ({ videoCounter, backgroundImage, vertical }: any) => {
                   }}
                 >
                   <>
-                    {/* <Img
+                    <Img
                       src={playIconUrl}
                       style={{
                         position: 'absolute',
@@ -110,11 +110,14 @@ const Email: any = ({ videoCounter, backgroundImage, vertical }: any) => {
                         left: '50%',
                         transform: 'translate(-50%, -50%)',
                         width: 40,
-                        background: 'red',
-                        padding: 5,
+                        background: '#795548b8',
+                        padding: 10,
                         borderRadius: '50%',
+                        color: 'white',
+                        fill: 'white',
+                        filter: 'invert(1)',
                       }}
-                    /> */}
+                    />
 
                     <Img
                       src="https://broadsay-dev-play.s3.amazonaws.com/64789d7a64436238e65ed52e/media/65a7b2da0de55b57e1a07c17/poster.png"
@@ -132,7 +135,7 @@ const Email: any = ({ videoCounter, backgroundImage, vertical }: any) => {
             <>
               <Row
                 style={{
-                  height: 220,
+                  height: blockHeight,
                   display: 'flex',
                   flexWrap: 'wrap',
                   justifyContent: 'center',
@@ -143,15 +146,39 @@ const Email: any = ({ videoCounter, backgroundImage, vertical }: any) => {
                 {arr1?.map(() => {
                   return (
                     <Column style={{ padding: 5, margin: 5 }}>
-                      <Link href="https://example.com">
-                        <Img
-                          src="https://broadsay-dev-play.s3.amazonaws.com/64789d7a64436238e65ed52e/media/65a7b2da0de55b57e1a07c17/poster.png"
-                          width={previewWidth}
-                          height={previewHeight}
-                          style={{
-                            objectFit: 'cover',
-                          }}
-                        />
+                      <Link
+                        href="https://example.com"
+                        style={{
+                          position: 'relative',
+                        }}
+                      >
+                        <>
+                          <Img
+                            src={playIconUrl}
+                            style={{
+                              position: 'absolute',
+                              top: '50%',
+                              left: '50%',
+                              transform: 'translate(-50%, -50%)',
+                              width: 40,
+                              background: '#795548b8',
+                              padding: 10,
+                              borderRadius: '50%',
+                              color: 'white',
+                              fill: 'white',
+                              filter: 'invert(1)',
+                            }}
+                          />
+
+                          <Img
+                            src="https://broadsay-dev-play.s3.amazonaws.com/64789d7a64436238e65ed52e/media/65a7b2da0de55b57e1a07c17/poster.png"
+                            width={previewWidth}
+                            height={previewHeight}
+                            style={{
+                              objectFit: 'cover',
+                            }}
+                          />
+                        </>
                       </Link>
                     </Column>
                   );
@@ -160,7 +187,7 @@ const Email: any = ({ videoCounter, backgroundImage, vertical }: any) => {
               {arr2.length ? (
                 <Row
                   style={{
-                    height: 220,
+                    height: blockHeight,
                     display: 'flex',
                     flexWrap: 'wrap',
                     justifyContent: 'center',
@@ -171,15 +198,39 @@ const Email: any = ({ videoCounter, backgroundImage, vertical }: any) => {
                   {arr2?.map(() => {
                     return (
                       <Column style={{ padding: 5, margin: 5 }}>
-                        <Link href="https://example.com">
-                          <Img
-                            src="https://broadsay-dev-play.s3.amazonaws.com/64789d7a64436238e65ed52e/media/65a7b2da0de55b57e1a07c17/poster.png"
-                            width={previewWidth}
-                            height={previewHeight}
-                            style={{
-                              objectFit: 'cover',
-                            }}
-                          />
+                        <Link
+                          href="https://example.com"
+                          style={{
+                            position: 'relative',
+                          }}
+                        >
+                          <>
+                            <Img
+                              src={playIconUrl}
+                              style={{
+                                position: 'absolute',
+                                top: '50%',
+                                left: '50%',
+                                transform: 'translate(-50%, -50%)',
+                                width: 40,
+                                background: '#795548b8',
+                                padding: 10,
+                                borderRadius: '50%',
+                                color: 'white',
+                                fill: 'white',
+                                filter: 'invert(1)',
+                              }}
+                            />
+
+                            <Img
+                              src="https://broadsay-dev-play.s3.amazonaws.com/64789d7a64436238e65ed52e/media/65a7b2da0de55b57e1a07c17/poster.png"
+                              width={previewWidth}
+                              height={previewHeight}
+                              style={{
+                                objectFit: 'cover',
+                              }}
+                            />
+                          </>
                         </Link>
                       </Column>
                     );
@@ -195,7 +246,7 @@ const Email: any = ({ videoCounter, backgroundImage, vertical }: any) => {
 };
 
 const App: FC = () => {
-  const [videoCounter, setVideoCounter] = useState(1);
+  const [videoCounter, setVideoCounter] = useState(6);
   const [backgroundImage, setBackgroundImage] = useState(true);
   const [vertical, setVertical] = useState(false);
 
