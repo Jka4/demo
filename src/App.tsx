@@ -79,7 +79,6 @@ const Email: any = ({ videoCounter, backgroundImage, vertical }: any) => {
             backgroundImage: backgroundImage
               ? `url("https://img.freepik.com/free-photo/abstract-uv-ultraviolet-light-composition_23-2149243965.jpg")`
               : '',
-            backgroundColor: 'red',
             display: 'flex',
             flexWrap: 'wrap',
             justifyContent: 'center',
@@ -90,7 +89,13 @@ const Email: any = ({ videoCounter, backgroundImage, vertical }: any) => {
           {arr.length === 1 ? (
             <>
               <Column style={{ padding: 50, margin: 20 }}>
-                <Link href="https://example.com">
+                <Link
+                  href="https://example.com"
+                  style={{
+                    // objectFit: 'cover',
+                    backgroundImage: `url('./platIcon.svg')`,
+                  }}
+                >
                   <Img
                     src="https://broadsay-dev-play.s3.amazonaws.com/64789d7a64436238e65ed52e/media/65a7b2da0de55b57e1a07c17/poster.png"
                     width={oneVideoPreviewWidth}
