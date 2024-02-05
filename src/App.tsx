@@ -30,7 +30,7 @@ const Email: any = ({ videoCounter, backgroundImage, vertical }: any) => {
   const oneVideoPreviewWidth = vertical ? 300 : 500;
   const oneVideoPreviewHeight = vertical ? 500 : 250;
 
-  const playIconUrl = `https://github.com/Jka4/demo/tree/master/public/images/playIcon.svg`;
+  const playIconUrl = `https://raw.githubusercontent.com/Jka4/demo/master/public/images/playIcon.svg`;
 
   console.log('🚀 ~ playIconUrl:', playIconUrl);
 
@@ -97,15 +97,24 @@ const Email: any = ({ videoCounter, backgroundImage, vertical }: any) => {
               <Column style={{ padding: 50, margin: 20 }}>
                 <Link
                   href="https://example.com"
-                  style={
-                    {
-                      // objectFit: 'cover',
-                      // backgroundImage: `url(${PlayIcon})`,
-                    }
-                  }
+                  style={{
+                    position: 'relative',
+                  }}
                 >
-                  <div>
-                    <img src={playIconUrl} />
+                  <>
+                    {/* <Img
+                      src={playIconUrl}
+                      style={{
+                        position: 'absolute',
+                        top: '50%',
+                        left: '50%',
+                        transform: 'translate(-50%, -50%)',
+                        width: 40,
+                        background: 'red',
+                        padding: 5,
+                        borderRadius: '50%',
+                      }}
+                    /> */}
 
                     <Img
                       src="https://broadsay-dev-play.s3.amazonaws.com/64789d7a64436238e65ed52e/media/65a7b2da0de55b57e1a07c17/poster.png"
@@ -115,7 +124,7 @@ const Email: any = ({ videoCounter, backgroundImage, vertical }: any) => {
                         objectFit: 'cover',
                       }}
                     />
-                  </div>
+                  </>
                 </Link>
               </Column>
             </>
