@@ -39,7 +39,6 @@ const Email: any = ({ videoCounter, backgroundImage, vertical }: any) => {
       <Head>
         <title>My email title</title>
         <Preview>My email title</Preview>
-
         <Font
           fontFamily="Roboto"
           fallbackFontFamily="Verdana"
@@ -67,6 +66,7 @@ const Email: any = ({ videoCounter, backgroundImage, vertical }: any) => {
         <Text
           style={{
             fontSize: 18,
+            marginBottom: 40,
           }}
         >
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, doloribus ipsam reprehenderit voluptatibus
@@ -171,7 +171,7 @@ const Email: any = ({ videoCounter, backgroundImage, vertical }: any) => {
 const App: FC = () => {
   const [videoCounter, setVideoCounter] = useState(1);
   const [backgroundImage, setBackgroundImage] = useState(true);
-  const [vertical, setVertical] = useState(true);
+  const [vertical, setVertical] = useState(false);
 
   const log = () => {
     const html = render(<Email videoCounter={videoCounter} backgroundImage={backgroundImage} vertical={vertical} />, {
